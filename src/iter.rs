@@ -61,8 +61,8 @@ pub fn run() {
      let  v1:Vec<i32> = vec![1,12,23,34,45];
     // let v = v1.reverse();
     // println!("rev:{:?}",v);
-    let map:Vec<i32> = v1.iter().next().map(|x| x+1).collect();
-    println!("map:{:?}", map);
+    // let map:Vec<i32> = v1.iter().next().map(|x| x+1).collect();
+    // println!("map:{:?}", map);
 
     // let a1 = String::from("santhiyaa");
     // let a2 = String::from("sai");
@@ -129,5 +129,8 @@ pub fn run() {
 //     println!("map: {:?}",&map);
 
 
-
+        let mobile = vec!["980765890","7654890321"];
+        for mob in mobile {
+            println!("{}",&mob);
+        }
 }

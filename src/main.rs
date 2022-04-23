@@ -10,12 +10,13 @@
 // mod functions;
 // mod pointer_reference;
 // mod structs;
-// mod results;
+mod results;
 // mod enums;
 // mod match_operator;
 // mod options;
 //  mod iter;
-mod hashmap;
+// pub mod results;
+// mod hashmap;
 // mod hash;
 // mod student_info;
 // use student_info::*;
@@ -74,12 +75,12 @@ mod hashmap;
       // loops::loops();
       // functions::run();
       // structs::run();
-      // results::run();
+      results::run();
       // enums::run();
       // match_operator::run();
       // options::run();
       // iter::run();
-      hashmap::run();
+      // hashmap::run();
         // hash::run();
          
 }

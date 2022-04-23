@@ -71,7 +71,7 @@ pub fn vectors() {
     //     println!("{:?}",res);
 
 
-    // let mut products:Vec<&str> = vec!["pen","pencil"];
+    let mut products:Vec<&str> = vec!["pen","pencil"];
     // println!("vectors:{:?}",products);
 
     // products[0] = "Pen";
@@ -85,9 +85,9 @@ pub fn vectors() {
     // products.pop();
     // println!("remove:{:?}",products);
 
-    // for x in products.iter(){
-    //     println!("{}",x);
-    // }
+    for x in products.iter(){
+        println!("{}",x);
+    }
 
     // for no in num.iter_mut(){
     //     *no +=2;
@@ -115,7 +115,13 @@ pub fn vectors() {
     for stud in vect.iter(){
        let s = stud.marks;
        if s>450 {
-           println!("{:?}",stud)
+        //    println!("{:?}",stud)
        }
     }
+
+//remove duplicate elements
+    let mut v = vec!["a", "b", "a"];
+    v.sort_unstable();
+    v.dedup(); //only removes consecutive elements from a vector
+    // println!("{:?}", v);
 }
