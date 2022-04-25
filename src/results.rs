@@ -60,7 +60,10 @@ fn divide(a: u32, b: u32) -> Result<u32, String> {
     });
     // println!("{:?}", aft);
 
-//map
+//map - convert one type of data to other data type
     let bef = Some(10);
     let aft = bef.map(|x| x.to_string());
+    println!("{:?}", aft);
+
+   
 }

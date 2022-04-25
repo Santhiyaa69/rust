@@ -1,9 +1,14 @@
-// #[derive(Debug,Clone)]
-// struct Employee {
-//     name: String,
-//     salary: usize,
-//     age: u8
-// }
+// iter() iterates over the items by reference &T
+// iter_mut() iterates over the items, giving a mutable reference to each item &mut T
+// into_iter() iterates over the items, moving them into the new scope  T
+
+
+#[derive(Debug,Clone)]
+struct Employee {
+    name: String,
+    salary: usize,
+    age: u8
+}
 
 pub fn run() {
 // //Array    
@@ -15,16 +20,16 @@ pub fn run() {
 //     println!("{:?}",arr.iter().last());
 
 // //count
-//     let count = arr.iter().count();
+    let count = arr.iter().count();
 //     println!("Count:{}",count);
 
 // //min  
-//     let min = arr.iter().min();
+    let min = arr.iter().min();
 //     println!("min value:{:?}",arr.iter().min_by(|x, y| x.cmp(y)).unwrap());
 //     println!("min number:{:?}",min);
 
 // //max  
-//     let max = arr.iter().max();
+    let max = arr.iter().max();
 //     let max_value = arr.iter().max_by(|x,y| x.cmp(y)).unwrap();
 //     println!("max num:{:?}",max);
 //     println!("max value:{:?}",max_value);
@@ -38,11 +43,11 @@ pub fn run() {
     // println!("filter:{:?}",fil.next());
 
 // //enumerate - current index of the iteration and value is returned
-//     let mut iter = arr.iter().enumerate();
+    let mut iter = arr.iter().enumerate();
 //     println!("{:?}", iter.next());
 
 // //skip
-//     let mut skip = arr.iter().skip(2);
+    let mut skip = arr.iter().skip(2);
 //     println!("{:?}", skip.next());
 
 // //map
@@ -77,9 +82,15 @@ pub fn run() {
     // let vect2= v1.into_iter().find(|&x| x <3).unwrap() ;
     // println!("find:{:?}", vect2);
 
-    // let test = vec!["one", "two", "three"];
-    // let index = test.iter().position(|&i| i == "two").unwrap();
+    let test = vec!["one", "two", "three"];
+    let index = test.iter().position(|&i| i == "two").unwrap();
     // println!("{}", index);
+
+    // let test = vec!["one".to_string(), "two".to_string(), "three".to_string()];
+    // let index = test.into_iter().position(|i| i == "four".to_string()).expect("no value");
+    // println!("{}", index);
+
+  
 
     //flatten
     // let nested_vec: Vec<Vec<i32>> = vec![vec![1, 2], vec![3, 4]];
@@ -104,33 +115,57 @@ pub fn run() {
 
 
 
-    // let emp1 = Employee {
-    //     name: "riya".to_string(),
-    //     salary: 10000,
-    //     age:24
-    // };
-    // let emp2 = Employee {
-    //     name: "Thiya".to_string(),
-    //     salary: 15000,
-    //     age:26
-    // };
-    // let emp3 = Employee {
-    //     name: "sai".to_string(),
-    //     salary: 25000,
-    //     age:30
-// };
-//     let v = vec![emp1,emp2,emp3];
-//     let fil:Vec<Employee> = v.clone().into_iter().filter(|x| x.salary > 10000).collect();
-//     let find = v.iter().find(|x| x.age == 29);
-//     let map:Vec<String> = v.clone().iter().map(|x| x.name.to_uppercase()).collect();
-//     // println!("{:#?}",v);
+    let emp1 = Employee {
+        name: "riya".to_string(),
+        salary: 10000,
+        age:24
+    };
+    let emp2 = Employee {
+        name: "Thiya".to_string(),
+        salary: 15000,
+        age:26
+    };
+    let emp3 = Employee {
+        name: "sai".to_string(),
+        salary: 25000,
+        age:30
+};
+    let v = vec![emp1,emp2,emp3];
+    let fil:Vec<Employee> = v.clone().into_iter().filter(|x| x.salary > 10000).collect();
+    let find = v.iter().find(|x| x.age == 29);
+    let map:Vec<String> = v.clone().iter().map(|x| x.name.to_uppercase()).collect();
+    // println!("{:#?}",v);
 //     println!("{:#?}",fil);
 //     println!("{:?}",find);
 //     println!("map: {:?}",&map);
 
-
         let mobile = vec!["980765890","7654890321"];
         for mob in mobile {
-            println!("{}",&mob);
+            // println!("{}",&mob);
         }
+//iter vs into_iter
+        let vec1 = vec![1, 2, 3];
+        let vec2 = vec![4, 5, 6];
+
+        // `iter()` for vecs yields `&i32`. Destructure to `i32`.
+        println!("2 in vec1: {}", vec1.iter().any(|&x| x == 2));
+        // `into_iter()` for vecs yields `i32`. No destructuring required.
+        println!("2 in vec2: {}", vec2.into_iter().any(| x| x == 2));
+
+ // enumerate - current count and the element during iteration
+ let items = ["pen","pencil","eraser"];
+ for (i, x) in items.iter().enumerate() {
+     println!("index {} item {}", i, x);
+ }
+
+ let v = ["san","2","5"];
+    let res:Vec<_> = v.iter().map(|x| x.parse::<i32>()).collect();
+    // println!("{:?}", res)
+    
+ let strings = vec!["tofu", "93", "18"];
+    let numbers: Vec<_> = strings
+        .into_iter()
+        .filter_map(|s| s.parse::<i32>().ok())
+        .collect();
+    println!("Results: {:?}", numbers);
 }

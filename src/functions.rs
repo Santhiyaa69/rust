@@ -1,3 +1,19 @@
+//METHOD
+//method and functions are not same
+//method has self parameter as first 
+//invoked by instances   (.)
+
+//ASSOCIATED FUNCTIONS
+//doesn't contain self parameter
+//invoked by double colon - path separator (::)
+
+//FUNCTIONS
+//function's are directly called by it's name
+
+// self is the current module or instance  of the object.
+//  &self is a reference the the current object, useful if you want to use the object but not take ownership. 
+//  Self refers to the return type of the current object. 
+
 pub fn run() {
     // let addnum = add(10,7);
     // println!("{}",addnum);
@@ -14,6 +30,7 @@ pub fn run() {
     let res = multiple_values(&param1,param2);
     println!("{:?}",res);
     println!("{}",param1);
+
 
 }
 
@@ -33,4 +50,8 @@ pub fn run() {
 
 fn multiple_values (p1: &String, p2: usize) ->(&String,usize) {
     (p1,p2)
+}
+ pub fn con (n1: String,n2: String) -> String {
+        let join = n1 + &n2;
+        join
 }

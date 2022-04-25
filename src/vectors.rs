@@ -7,6 +7,13 @@ struct Student {
     marks: usize
 }
 
+#[derive(Debug)]
+enum SpreadsheetCell {
+    Int(i32),
+    Float(f64),
+    Text(String),
+}
+
 
 pub fn vectors() {
 
@@ -86,7 +93,7 @@ pub fn vectors() {
     // println!("remove:{:?}",products);
 
     for x in products.iter(){
-        println!("{}",x);
+        // println!("{}",x);
     }
 
     // for no in num.iter_mut(){
@@ -119,9 +126,46 @@ pub fn vectors() {
        }
     }
 
+ 
 //remove duplicate elements
     let mut v = vec!["a", "b", "a"];
     v.sort_unstable();
     v.dedup(); //only removes consecutive elements from a vector
     // println!("{:?}", v);
+
+    
+    let row = vec![
+        SpreadsheetCell::Int(3),
+        SpreadsheetCell::Text(String::from("blue")),
+        SpreadsheetCell::Float(10.12),
+    ];
+    // println!("{:?}", row);
+    // for i in row.iter() {
+    //     // println!("{:?}",i);
+       
+    // }
+
+    let a_binding;
+    {
+        let x = 2;
+        // Initialize the binding
+        a_binding = x * x;
+    }
+    // println!("a binding: {}", a_binding);
+
+    let another_binding;
+    // // Error! Use of uninitialized binding
+    // println!("another binding: {}", another_binding);
+    // // FIXME ^ Comment out this line
+    another_binding = 1;
+    // println!("another binding: {}", another_binding);
+
+//parse &str/string to number
+    let v = ["san","2","5"];
+    let res:Vec<_> = v.iter().map(|x| x.parse::<i32>()).collect();
+    // println!("{:?}", res);
+
+    let v1 = ["thiya".to_string(),"5".to_string()];
+    let fi: Vec<_> = v1.iter().filter_map(|v| v.parse::<i32>().ok()).collect();
+    println!("parse:{:?}", fi)
 }

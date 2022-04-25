@@ -99,18 +99,19 @@ pub fn run() {
  }
 
 //match
-    let mut contacts  = HashMap::new();
-    contacts.insert("sai", "8790654532") ;
-    contacts.insert("sri", "7856342109");
-    contacts.entry("sakthi").or_insert("6754231092");
+    let mut contacts:HashMap<&str, Vec<&str>>  = HashMap::new();
+   let p1 = contacts.insert("sai", vec!["8790654532"]) ;
+   let p2 = contacts.insert("sri", vec!["6754231092"]);
+   let p3 = contacts.entry("sakthi").or_insert(vec!["6754231009"]);
 
     match contacts.get(&"sakthi") {
         Some(val) => 
         {
-            // println!("Contact No.{}", val)
+            println!("Contact No.{:?}", val)
         },
         None => println!("No match found")
     }
+    println!("{:?}", contacts);  // {"sri": ["6754231092"], "sakthi": ["6754231009"], "sai": ["8790654532"]}
 
 // Try to find an entry in HashMap<&str, Vec<&str>>  
 // If it does - it will push the &str (employee_name) into Vec<&str>. 
@@ -135,17 +136,18 @@ pub fn run() {
         }
 
     }
-    // println!("{:#?}",designation);
+    println!("{:#?}",designation);
 
-    let mut classes: HashMap<String,Vec<String>> = HashMap::new();
-    let s1 = classes.entry(String::from("class A")).or_insert(vec![String::from("Joy")]);
-    // println!("{:?}", classes);
+    let mut classes: HashMap<String,Vec<Option<String>>> = HashMap::new();
+    let s1 = classes.entry(String::from("class A")).or_insert(vec![Some(String::from("Joy"))]);
+    println!("{:?}", classes);  //{"class A": [Some("Joy")]}
 
     // let mut classes : HashMap<String,HashSet<String>> = HashMap::new();
     // let stud1 = classes.entry(String::from("class B"));
     // stud1.or_default().insert(String::from("Bobby"));
-    // println!("{:?}", classes);
+    // println!("{:?}", classes);  //{"class B": {"Bobby"}}
 
+   
 }
 
 
