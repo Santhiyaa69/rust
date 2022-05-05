@@ -16,11 +16,12 @@ mod results;
 // mod options;
 //  mod iter;
 // pub mod results;
+// mod date;
+mod serde_json;
 // mod hashmap;
 // mod hash;
 // mod student_info;
 // use student_info::*;
-
 
 #[allow(dead_code)]
 
@@ -29,58 +30,55 @@ mod results;
 //       class: usize,
 //       mark_details: Details
 // }
- fn main() {
-//       let stud1 =  Details {
-//             name:"Riya".to_string(),
-//             m1: 90,
-//             m2: 85,
-//             m3: 76  
-//       };
-//       let stud2 = Details {
-//             name: "Thiya".to_string(),
-//             m1: 95,
-//             m2: 79,
-//             m3: 65  
-//       };
-//       let s1 = Student {
-//             id: 1,
-//             class: 1,
-//             mark_details: Details::new("Riya".to_string(),87),
-//       };
-//       let s2 = Student {
-//             id: 2,
-//             class: 2,
-//             mark_details: Details::new("Thiya".to_string(),75),
-//       };
-      // println!("{:#?}",s1.mark_details);
-      // println!("{:#?}",s2.mark_details);
-      // println!("Total Marks:{}",stud1.total());
-      // println!("Total Marks:{}",stud2.total());
-      // println!("Highest Mark in m2:{:?}",stud1.compare(stud2));
+fn main() {
+    //       let stud1 =  Details {
+    //             name:"Riya".to_string(),
+    //             m1: 90,
+    //             m2: 85,
+    //             m3: 76
+    //       };
+    //       let stud2 = Details {
+    //             name: "Thiya".to_string(),
+    //             m1: 95,
+    //             m2: 79,
+    //             m3: 65
+    //       };
+    //       let s1 = Student {
+    //             id: 1,
+    //             class: 1,
+    //             mark_details: Details::new("Riya".to_string(),87),
+    //       };
+    //       let s2 = Student {
+    //             id: 2,
+    //             class: 2,
+    //             mark_details: Details::new("Thiya".to_string(),75),
+    //       };
+    // println!("{:#?}",s1.mark_details);
+    // println!("{:#?}",s2.mark_details);
+    // println!("Total Marks:{}",stud1.total());
+    // println!("Total Marks:{}",stud2.total());
+    // println!("Highest Mark in m2:{:?}",stud1.compare(stud2));
 
-
-
-
-
-
-
-      // print::print();
-      // variables::vars();
-      // data_types::types();
-      // strings::strings();
-      // tuples::tuples();
-      // array::arrays();
-      // vectors::vectors();
-      // conditionals::conditions();
-      // loops::loops();
-      // functions::run();
-      // structs::run();
-      results::run();
-      // enums::run();
-      // match_operator::run();
-      // options::run();
-      // iter::run();
-      // hashmap::run();
-        // hash::run();
-         
+    // print::print();
+    // variables::vars();
+    // data_types::types();
+    // strings::strings();
+    // tuples::tuples();
+    // array::arrays();
+    // vectors::vectors();
+    // conditionals::conditions();
+    // loops::loops();
+    // functions::run();
+    // structs::run();
+    results::run();
+    // enums::run();
+    // match_operator::run();
+    // options::run();
+    // iter::run();
+    // hashmap::run();
+    // hash::run();
+    // date::bsondatetime_demo();
+    // date::datetime();
+    // date::cal_days_bt_dates();
+    serde_json::run();
 }

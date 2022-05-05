@@ -1,13 +1,17 @@
+// ok()  - result to option
+// ok_or_else() - option to result
+//and_then() - Some(value), None
+
 fn divide(a: u32, b: u32) -> Result<u32, String> {
     if b != 0 {
-      Ok(a / b)
+        Ok(a / b)
     } else {
-      Err("Division by zero!".to_string())
+        Err("Division by zero!".to_string())
     }
-  }
+}
 
-  pub fn run() {
-    let res = divide(6,2);
+pub fn run() {
+    let res = divide(6, 2);
     // println!("{:?}",res);
 
     // let data = vec!["A", "B", "C"];
@@ -21,16 +25,16 @@ fn divide(a: u32, b: u32) -> Result<u32, String> {
     let w1 = Some("demo".to_string());
     let w2 = Some("dummy".to_string());
     let w3 = Some("doodle".to_string());
-    let v = vec![w1,w2,w3];
+    let v = vec![w1, w2, w3];
 
     // println!("{:?}", v);
 
-//convert option to result
+    //convert option to result
     let before: Option<i32> = Some(-2);
     let after: Result<i32, &str> = before.ok_or_else(|| "no value");
-    // println!( "{:?}",after.map_err(|x| x.to_string()));
+    println!("{:?}", after.map_err(|x| x.to_string()));
 
-//convert result to option
+    //convert result to option
     let before: Result<i32, &str> = Ok(-2);
     let after: Option<i32> = before.ok();
     // println!("{:?}", after);
@@ -39,31 +43,23 @@ fn divide(a: u32, b: u32) -> Result<u32, String> {
     let after: Option<i32> = before.ok();
     // println!("{:?}", after);
 
-//and-then
-    let before= Ok(2);
+    //and-then
+    let before = Ok(2);
     let after = before.and_then(|x| {
-      if x > 0 {
-        Ok(x.to_string())
-      } else {
-        Err("value gt than 0")
-      }
+        if x > 0 {
+            Ok(x.to_string())
+        } else {
+            Err("value gt than 0")
+        }
     });
     // println!("{:?}", after);
 
     let bef = Some(5);
-    let aft = bef.and_then(|x| {
-      if x > 0 {
-        Some(x.to_string())
-      } else {
-        None
-      }
-    });
+    let aft = bef.and_then(|x| if x > 0 { Some(x.to_string()) } else { None });
     // println!("{:?}", aft);
 
-//map - convert one type of data to other data type
+    //map - convert one type of data to other data type
     let bef = Some(10);
     let aft = bef.map(|x| x.to_string());
     println!("{:?}", aft);
-
-   
 }
