@@ -17,21 +17,19 @@
 struct Person {
     id: i32,
     first_name: String,
-    last_name: String
+    last_name: String,
 }
 
-
-
 pub fn run() {
-//    let mut emp = Employee {
-//     id: 100,
-//     name: String::from("santhiyaa"),
-//     age: 23
-//   };
-//   emp.name = "Santhiyaa".to_string();
-//   emp.age = 22;
+    //    let mut emp = Employee {
+    //     id: 100,
+    //     name: String::from("santhiyaa"),
+    //     age: 23
+    //   };
+    //   emp.name = "Santhiyaa".to_string();
+    //   emp.age = 22;
 
-//    println!("empId:{} empName:{} age:{}",emp.id,emp.name,emp.age);
+    //    println!("empId:{} empName:{} age:{}",emp.id,emp.name,emp.age);
 
     // let mut e = Employee(1,"Thiya".to_string(),23);
     // println!("{} {} {}",e.0,e.1,e.2);
@@ -53,12 +51,11 @@ pub fn run() {
     let per = Person {
         id: 1,
         first_name: "Harry".to_string(),
-        last_name: "Potter".to_string()
+        last_name: "Potter".to_string(),
     };
-     println!("{:?}",per.get());
+    println!("{:?}", per.get());
     // //  println!("{:#?}",(per.id,per.first_name,per.last_name));
     // println!("{:#?}",Person::get_details(per.id,per.first_name,per.last_name));
-
 }
 
 // fn filter_by_cost(prod1: Products, prod2: Products) -> Products{
@@ -71,24 +68,22 @@ pub fn run() {
 //      }
 //     }
 
-
 impl Person {
     fn get(&self) {
-      println!("{} {} {}",
-             self.id,self.first_name,self.last_name)
+        println!("{} {} {}", self.id, self.first_name, self.last_name)
     }
 
-//     fn get(&self) -> String {
-//         format!("{} {} {}",
-//                self.id,self.first_name,self.last_name)
-//       }
+    //     fn get(&self) -> String {
+    //         format!("{} {} {}",
+    //                self.id,self.first_name,self.last_name)
+    //       }
 
-//     //static method
-//     fn get_details(id: i32, first_name: String, last_name: String) -> Person {
-//         Person {
-//            id,
-//            first_name,
-//            last_name
-//         }
-//     }
-}    
+    //     //static method
+    //     fn get_details(id: i32, first_name: String, last_name: String) -> Person {
+    //         Person {
+    //            id,
+    //            first_name,
+    //            last_name
+    //         }
+    //     }
+}

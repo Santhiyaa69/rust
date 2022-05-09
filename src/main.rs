@@ -1,3 +1,6 @@
+use password_encrypt::hash_password;
+// use serde_json::from_str;
+
 // mod print;
 // mod variables;
 //  mod data_types;
@@ -10,14 +13,17 @@
 // mod functions;
 // mod pointer_reference;
 // mod structs;
-mod results;
+// mod results;
 // mod enums;
 // mod match_operator;
 // mod options;
 //  mod iter;
 // pub mod results;
 // mod date;
-mod serde_json;
+// mod serde_json;
+mod password_encrypt;
+// mod structs_ex;
+// mod traits;
 // mod hashmap;
 // mod hash;
 // mod student_info;
@@ -59,6 +65,24 @@ fn main() {
     // println!("Total Marks:{}",stud2.total());
     // println!("Highest Mark in m2:{:?}",stud1.compare(stud2));
 
+    let data = r#"{
+        "name": "Thiya",
+        "address": "5, KTC Nagar,Tuty",
+        "contactInfo": {
+            "mobile": "6712034761",
+            "alternateMobile": "9812345098"
+        },
+        "deliveryAddress": [
+            {
+                "address": "10, TTC Nagar",
+                "city": "Tuty"
+            }
+        ]
+    }"#;
+    // let dt = serde_json::from_str(&data).unwrap();
+
+    let pwd = "san123";
+
     // print::print();
     // variables::vars();
     // data_types::types();
@@ -70,7 +94,7 @@ fn main() {
     // loops::loops();
     // functions::run();
     // structs::run();
-    results::run();
+    // results::run();
     // enums::run();
     // match_operator::run();
     // options::run();
@@ -80,5 +104,7 @@ fn main() {
     // date::bsondatetime_demo();
     // date::datetime();
     // date::cal_days_bt_dates();
-    serde_json::run();
+    // serde_json::run();
+    // structs_ex::get_customer(dt).unwrap();
+    hash_password("aplus");
 }
