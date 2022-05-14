@@ -1,0 +1,81 @@
+async fn all(query: web::Query<HashMap<String, String>>, conn: Connection) -> Result<HttpResponse> {
+    let customer = query
+        .get("customer")
+        .ok_or(Error::new("Customer is required", ErrorKind::InvalidData))?;
+    let result = Patient::all(&conn, customer).await?;
+    Ok(HttpResponse::Ok().json(result))
+}
+-------------------------------------------------------------------------------------------------------------------------------------------
+let find_option = FindOptions::builder().projection(doc! {"_id": 0, "id": {"$toString": "$_id"}, "name": 1, "displayName": 1}).build();
+        
+        let branche_docs:Vec<Document> = CollectionName::branches()
+            .get_collection(&db)
+            .r_find_with_options(doc!{"_id": {"$in": member.branches}}, find_option.clone())
+            .await
+            .map_err(|_|Error::new("Internal", ErrorKind::Internal))?;
+        let mut branches = Vec::new();
+        for doc in branche_docs {
+            branches.push(doc! {
+                "id": doc.get_object_id("_id").map_err(|_|Error::new("Internal", ErrorKind::Internal))?,
+                "name": doc.get_str("name").unwrap_or_default().to_owned(),
+                "displayName": doc.get_str("displayName").unwrap_or_default().to_owned(),
+            });
+        }
+---------------------------------------------------------------------------------------------------
+ let inv_date = NaiveDate::parse_from_str(&txn.inv_date, "%d-%m-%Y")
+                .map_err(|err| Error::new(err.to_string(), ErrorKind::Internal))
+                .unwrap()
+                .format("%d-%b-%Y")
+                .to_string();
+				
+ let generated_on = DateTime::parse_from_rfc3339(&stock_analysis.created_at)
+            .map_err(|_| Error::new("Not Found", ErrorKind::NotFound))?
+            .with_timezone(&FixedOffset::east(19800));
+        let generated_on = generated_on.format("%d-%m-%Y %I:%M %p").to_string();
+-------------------------------------------------------------------------------------------------------		
+use bson::DateTime;
+
+pub fn bsondatetime_demo() {
+    let bson_dt = DateTime::now();
+    let chrono_dt = bson_dt.to_chrono().format("%Y-%m-%d").to_string();
+    println!("{chrono_dt}");
+}
+---------------------------------------------------------------------------------------------------		
+		// let date = NaiveDate::parse_from_str(&date_str, "%d-%m-%Y")
+        //     .map_err(|e| e.to_string())
+        //     .unwrap()
+        //     .format("%d-%m-%Y")
+        //     .to_string();
+		
+		 let date = NaiveDate::parse_from_str(&date_str, "%d-%m-%Y")
+            .map_err(|e| e.to_string())
+            .unwrap()
+            .format("%d-%m-%Y")
+            .to_string();
+-------------------------------------------------------------------------------------------------			
+		let date = DateTime::parse_rfc3339_str("2022-05-03T13:36:23.843Z").unwrap();
+        // let date = date.format("%d-%m-%Y").to_string();
+--------------------------------------------------------------------------------------------------
+		let eff_date = i.get("effDate").unwrap();
+        println!("{}", &eff_date);
+
+        let date_time = eff_date.as_datetime().unwrap();
+        println!("{}", &date_time);
+
+        let date = date_time.to_rfc3339_string();
+        println!("{}", &date);
+        // let current_date = DateTime::now();
+---------------------------------------------------------------------------------------------------------------------------
+TOKEN
+
+let exp = Utc::now()
+        .checked_add_signed(Duration::seconds(86400))
+        .expect("Valid Timestamp")
+        .timestamp();
+let token = JWT
+        .get()
+        .unwrap()
+        .encode(serde_json::json!({"id": member_id, "exp": exp}))
+        .unwrap();
+let _val = JWT.get().unwrap().decode::<serde_json::Value>(&token).unwrap();
+

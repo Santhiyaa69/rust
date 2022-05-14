@@ -1,4 +1,4 @@
-use password_encrypt::hash_password;
+use password_encrypt::{hash_password, verify_password};
 // use serde_json::from_str;
 
 // mod print;
@@ -22,6 +22,8 @@ use password_encrypt::hash_password;
 // mod date;
 // mod serde_json;
 mod password_encrypt;
+mod string_matches;
+mod thread;
 // mod structs_ex;
 // mod traits;
 // mod hashmap;
@@ -105,6 +107,11 @@ fn main() {
     // date::datetime();
     // date::cal_days_bt_dates();
     // serde_json::run();
+    // string_matches::run();
     // structs_ex::get_customer(dt).unwrap();
     hash_password("aplus");
+    verify_password(
+        "$scrypt$ln=15,r=8,p=1$d5CP0THDyqmVQBMM8NcdIA$RNGmmsNnTTXJiMgJAKYdzvBb2rxJ+2rLQn2DdNT5BCo",
+        "12345",
+    );
 }
