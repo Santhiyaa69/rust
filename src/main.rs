@@ -1,10 +1,10 @@
-use password_encrypt::{hash_password, verify_password};
+// use password_encrypt::{hash_password, verify_password};
 // use serde_json::from_str;
 
 // mod print;
 // mod variables;
 //  mod data_types;
-// mod strings;
+mod strings;
 // mod tuples;
 // mod array;
 // mod vectors;
@@ -21,8 +21,8 @@ use password_encrypt::{hash_password, verify_password};
 // pub mod results;
 // mod date;
 // mod serde_json;
-mod password_encrypt;
-mod string_matches;
+// mod password_encrypt;
+// mod string_matches;
 mod thread;
 // mod structs_ex;
 // mod traits;
@@ -88,7 +88,7 @@ fn main() {
     // print::print();
     // variables::vars();
     // data_types::types();
-    // strings::strings();
+    strings::strings();
     // tuples::tuples();
     // array::arrays();
     // vectors::vectors();
@@ -108,10 +108,11 @@ fn main() {
     // date::cal_days_bt_dates();
     // serde_json::run();
     // string_matches::run();
+    // thread::run();
     // structs_ex::get_customer(dt).unwrap();
-    hash_password("aplus");
-    verify_password(
-        "$scrypt$ln=15,r=8,p=1$d5CP0THDyqmVQBMM8NcdIA$RNGmmsNnTTXJiMgJAKYdzvBb2rxJ+2rLQn2DdNT5BCo",
-        "12345",
-    );
+    // hash_password("aplus");
+    // verify_password(
+    //     "$scrypt$ln=15,r=8,p=1$d5CP0THDyqmVQBMM8NcdIA$RNGmmsNnTTXJiMgJAKYdzvBb2rxJ+2rLQn2DdNT5BCo",
+    //     "12345",
+    // );
 }

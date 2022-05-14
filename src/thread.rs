@@ -5,7 +5,7 @@ pub fn run() {
     let v = vec![1, 2, 3];
 
     let handle = thread::spawn(move || {
-        // thread::sleep(Duration::from_millis(2));
+        thread::sleep(Duration::from_secs(5));
         println!("Here's a vector: {:?}", v);
     });
 
