@@ -8,16 +8,7 @@ pub fn conditions() {
         println!("{0} {1}",num,"is not div by 2 and 3")
     }
 
-    let age:u8 = 18;
-    let is_active:bool = true;
-    if age >= 18 && is_active{
 
-    } else if age < 18 && is_active{
-
-    } else {
-
-    }
-
-  let number =  if num > 10 { true } else { false };
+  let number =  num > 10;
   println!("{}",number)
 }

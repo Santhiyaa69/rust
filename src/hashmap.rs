@@ -12,11 +12,11 @@ pub fn run() {
     let address = String::from("Address");
     map.insert(address.clone(), String::from("TUTY"));
     let value = map.get(&address);
-    // println!("state: {:?}",&value); //Some("TUTY")
+    println!("state: {:?}",&value); //Some("TUTY")
 
     let state = String::from("state");
     let s = map.get(&state);
-    // println!("state: {:?}",&s); // None(if there's no value for key get will return none)
+    println!("state: {:?}",&s); // None(if there's no value for key get will return none)
 
     //contains_key - checks if key exists in hashmap
     // if map.contains_key(&address) {
@@ -40,22 +40,22 @@ pub fn run() {
 
     //length of the hashmap
     let length = map.len();
-    // println!("length: {}", &length);
+    println!("length: {}", &length);
 
     //keys in hashmap
     let k = map.keys();
-    // println!("keys:{:?}", k);
+    println!("keys:{:?}", k);
 
     //values in hashmap
     let val = map.values();
-    // println!("values: {:?}", &val);
+    println!("values: {:?}", &val);
 
     //check the gvn hashmap empty or not - return bool
     let emp = map.is_empty();
-    // println!("isEmpty:{:?}", emp);
+    println!("isEmpty:{:?}", emp);
 
     let stu: HashMap<String, i32> = HashMap::new();
-    // println!("isEmpty{}", stu.is_empty());
+    println!("isEmpty{}", stu.is_empty());
 
     //loop
     let mut num: HashMap<String, i32> = HashMap::new();
@@ -71,7 +71,7 @@ pub fn run() {
     for (_k, v) in num.iter_mut() {
         *v = *v + 50;
     }
-    // println!("changeVal:{:?}", &num);
+    println!("changeVal:{:?}", &num);
 
     let mut marks: HashMap<String, Vec<i32>> = HashMap::new();
     let s1 = String::from("san");

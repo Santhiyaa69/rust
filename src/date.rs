@@ -1,13 +1,13 @@
-use bson::DateTime;
+// use mongodb::bson::DateTime;
 use chrono::prelude::*;
 
-pub fn bsondatetime_demo() {
-    let bson_dt = DateTime::now(); //current datetime
-    let chrono_dt = bson_dt.to_chrono().format("%Y-%m-%d").to_string(); //e.g `2022-05-05` - datetime to string
-    println!("{}", chrono_dt.as_str()); //string to &str
-}
+// pub fn bsondatetime_demo() {
+//     let bson_dt = DateTime::now(); //current datetime
+//     let chrono_dt = bson_dt.to_chrono().format("%Y-%m-%d").to_string(); //e.g `2022-05-05` - datetime to string
+//     println!("{}", chrono_dt.as_str()); //string to &str
+// }
 
-// let date = DateTime::parse_rfc3339_str("2022-05-03T13:36:23.843Z").unwrap();
+// let date = DateTime::parse_rfc3339_str("2022-05-03T13:36:23.843Z").unwrap(); // datetime string to datetime
 
 pub fn datetime() {
     let utc_dt = Utc::now(); // e.g. `2014-11-28T12:45:59.324310806Z`

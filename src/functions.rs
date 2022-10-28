@@ -51,7 +51,7 @@ pub fn run() {
 fn multiple_values (p1: &String, p2: usize) ->(&String,usize) {
     (p1,p2)
 }
- pub fn con (n1: String,n2: String) -> String {
-        let join = n1 + &n2;
-        join
-}
+//  pub fn con (n1: String,n2: String) -> String {
+//         let join = n1 + &n2;
+//         join
+// }

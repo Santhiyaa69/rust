@@ -7,6 +7,7 @@ edition = "2021"
 serde_json = "1.0"
 serde = { version = "1.0.136", features = ["derive"] }
 serde_urlencoded = "0.7.1"
+mongodb = "2.2.2"
 chrono = "0.4.19"
 # itertools = "0.10.2"
 scrypt = { version = "0.10.0", features = ["simple"] }

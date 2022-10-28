@@ -1,39 +1,38 @@
-// use password_encrypt::{hash_password, verify_password};
+use password_encrypt::{hash_password, verify_password};
 // use serde_json::from_str;
 
 use chrono::Utc;
 
-// mod print;
-// mod variables;
-//  mod data_types;
-// mod strings;
-// mod tuples;
-// mod array;
+mod print;
+mod variables;
+ mod data_types;
+mod strings;
+mod tuples;
+mod array;
 mod vectors;
-// mod conditionals;
-// mod loops;
-// mod functions;
-// mod pointer_reference;
-// mod structs;
-// mod results;
-// mod enums;
-// mod match_operator;
-// mod options;
-// mod iter;
-// pub mod results;
+mod conditionals;
+mod loops;
+mod functions;
+mod pointer_reference;
+mod structs;
+mod results;
+mod enums;
+mod match_operator;
+mod options;
+mod iter;
 mod date;
-// mod password_encrypt;
-// mod serde_json;
-// mod string_matches;
-// mod thread;
-// mod structs_ex;
-// mod traits;
-// mod hashmap;
-// mod hash;
-// mod student_info;
-// use student_info::*;
-// mod rocket_rs;
-// use rocket_rs::demo;
+mod password_encrypt;
+mod serde_json;
+mod string_matches;
+mod thread;
+mod structs_ex;
+mod traits;
+mod hashmap;
+mod hash;
+mod student_info;
+use student_info::*;
+mod rocket_rs;
+use rocket_rs::demo;
 mod file;
 
 #[allow(dead_code)]
@@ -88,36 +87,36 @@ fn main() {
     }"#;
     // let dt = serde_json::from_str(&data).unwrap();
 
-    // print::print();
-    // variables::vars();
-    // data_types::types();
-    // strings::strings();
-    // tuples::tuples();
-    // array::arrays();
+    print::print();
+    variables::vars();
+    data_types::types();
+    strings::strings();
+    tuples::tuples();
+    array::arrays();
     vectors::vectors();
-    // conditionals::conditions();
-    // loops::loops();
-    // functions::run();
-    // structs::run();
-    // results::run();
-    // enums::run();
-    // match_operator::run();
-    // options::run();
-    // iter::run();
-    // hashmap::run();
-    // hash::run();
-    date::bsondatetime_demo();
-    // date::datetime();
-    // date::cal_days_bt_dates();
-    // serde_json::run();
-    // string_matches::run();
-    // thread::run();
+    conditionals::conditions();
+    loops::loops();
+    functions::run();
+    structs::run();
+    results::run();
+    enums::run();
+    match_operator::run();
+    options::run();
+    iter::run();
+    hashmap::run();
+    hash::run();
+    // date::bsondatetime_demo();
+    date::datetime();
+    date::cal_days_bt_dates();
+    serde_json::run();
+    string_matches::run();
+    thread::run();
     // structs_ex::get_customer(dt).unwrap();
-    // hash_password("aplus");
-    // verify_password(
-    //     "$scrypt$ln=15,r=8,p=1$d5CP0THDyqmVQBMM8NcdIA$RNGmmsNnTTXJiMgJAKYdzvBb2rxJ+2rLQn2DdNT5BCo",
-    //     "12345",
-    // );
+    hash_password("aplus");
+    verify_password(
+        "$scrypt$ln=15,r=8,p=1$d5CP0THDyqmVQBMM8NcdIA$RNGmmsNnTTXJiMgJAKYdzvBb2rxJ+2rLQn2DdNT5BCo",
+        "12345",
+    );
     file::run();
     file::open();
 
