@@ -19,13 +19,13 @@ pub fn run() {
     // println!("state: {:?}",&s); // None(if there's no value for key get will return none)
 
     //contains_key - checks if key exists in hashmap
-    if map.contains_key(&address) {
-        // let add = map.get(&address);
-        // println!{"Address:{:?}", &add};
-    } else {
-        // let n = map.get(&state);
-        // println!("State:{:?}", &n);
-    }
+    // if map.contains_key(&address) {
+    //     // let add = map.get(&address);
+    //     // println!{"Address:{:?}", &add};
+    // } else {
+    //     // let n = map.get(&state);
+    //     // println!("State:{:?}", &n);
+    // }
 
     //updating value
     map.insert(String::from("age"), "23".to_string()); //(overwritting a values)
@@ -71,7 +71,7 @@ pub fn run() {
     for (_k, v) in num.iter_mut() {
         *v = *v + 50;
     }
-    println!("changeVal:{:?}", &num);
+    // println!("changeVal:{:?}", &num);
 
     let mut marks: HashMap<String, Vec<i32>> = HashMap::new();
     let s1 = String::from("san");
@@ -108,7 +108,7 @@ pub fn run() {
         }
         None => println!("No match found"),
     }
-    println!("{:?}", contacts); // {"sri": ["6754231092"], "sakthi": ["6754231009"], "sai": ["8790654532"]}
+    // println!("{:?}", contacts); // {"sri": ["6754231092"], "sakthi": ["6754231009"], "sai": ["8790654532"]}
 
     // Try to find an entry in HashMap<&str, Vec<&str>>
     // If it does - it will push the &str (employee_name) into Vec<&str>.
@@ -132,7 +132,7 @@ pub fn run() {
             designation.insert(department, vec!["srisha", "saisha"]);
         }
     }
-    println!("{:#?}", designation);
+    // println!("{:#?}", designation);
 
     // let mut classes: HashMap<String,Vec<Option<String>>> = HashMap::new();
     // let s1 = classes.entry(String::from("class A")).or_insert(vec![Some(String::from("Joy"))]);
@@ -142,12 +142,32 @@ pub fn run() {
     let s1 = classes
         .entry(String::from("class A"))
         .or_insert(String::from("Joy"));
-    println!("class:{:?}", classes); //{"class A": [Some("Joy")]}
+    // println!("class:{:?}", classes); //{"class A": [Some("Joy")]}
 
-    // let mut classes: HashMap<String, HashSet<String>> = HashMap::new();
-    // let stud1 = classes.entry(String::from("class B"));
-    // stud1.or_default().insert(String::from("Bobby"));
-    // println!("{:?}", classes); //{"class B": {"Bobby"}}
+    let mut classes: HashMap<String, HashSet<String>> = HashMap::new();
+    let stud1 = classes.entry(String::from("class B"));
+    stud1.or_default().insert(String::from("Bobby"));
+    // println!("HashSet: {:?}", classes); //{"class B": {"Bobby"}}
+
+    let mut m: HashMap<&str, HashSet<&str>> = HashMap::new();
+    let mut s = HashSet::from([
+        "allowNegativeStock",
+        "bwd",
+        "precision",
+        "name",
+        "displayName",
+        "validateName",
+        "tax",
+        "head",
+        "units",
+        "branchDetails",
+        "barcodes",
+        "scheduleH",
+        "scheduleH1",
+        "narcotics",
+    ]);
+    m.insert("inventories", s);
+    println!("hashmap:{:?}", &m);
 }
 
 // let mut marks: BTreeMap<String, Vec<i32>> = BTreeMap::new();

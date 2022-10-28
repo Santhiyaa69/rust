@@ -1,10 +1,14 @@
+use std::collections::HashSet;
+
+// use itertools::Itertools;
+
 #[derive(Debug)]
 #[allow(dead_code)]
 
 struct Student {
     id: usize,
     name: String,
-    marks: usize
+    marks: usize,
 }
 
 #[derive(Debug)]
@@ -14,9 +18,7 @@ enum SpreadsheetCell {
     Text(String),
 }
 
-
 pub fn vectors() {
-
     // let v:Vec<i32> = Vec::new();
     // println!("vectors length:{:?}",v.len());
 
@@ -66,7 +68,7 @@ pub fn vectors() {
     //     }
     // }
     //  println!("{:?}",vect);
-   
+
     // let v1 = String::from("tree");
     // let v2 = String::from("hai");
     // let r = vec![v1,v2];
@@ -77,8 +79,7 @@ pub fn vectors() {
     //     }
     //     println!("{:?}",res);
 
-
-    let mut products:Vec<&str> = vec!["pen","pencil"];
+    let mut products: Vec<&str> = vec!["pen", "pencil"];
     // println!("vectors:{:?}",products);
 
     // products[0] = "Pen";
@@ -92,7 +93,7 @@ pub fn vectors() {
     // products.pop();
     // println!("remove:{:?}",products);
 
-    for x in products.iter(){
+    for x in products.iter() {
         // println!("{}",x);
     }
 
@@ -104,36 +105,67 @@ pub fn vectors() {
     let s1 = Student {
         id: 1,
         name: "sandy".to_string(),
-        marks:400
+        marks: 400,
     };
-    let s2 = Student{
+    let s2 = Student {
         id: 2,
         name: "devi".to_string(),
-        marks:450
+        marks: 450,
     };
     let s3 = Student {
         id: 3,
         name: "divya".to_string(),
-        marks:480
-
+        marks: 480,
     };
-    let vect = vec![s1,s2,s3];
+    let vect = vec![s1, s2, s3];
     // println!("{:#?}",vect);
-    for stud in vect.iter(){
-       let s = stud.marks;
-       if s>450 {
-        //    println!("{:?}",stud)
-       }
+    for stud in vect.iter() {
+        let s = stud.marks;
+        if s > 450 {
+            //    println!("{:?}",stud)
+        }
     }
 
- 
-//remove duplicate elements
-    let mut v = vec!["a", "b", "a"];
+    //remove duplicate elements
+    let mut v = vec![
+        Some("a".to_string()),
+        Some("b".to_string()),
+        Some("a".to_string()),
+        Some("c".to_string()),
+        Some("b".to_string()),
+    ];
     v.sort_unstable();
-    v.dedup(); //only removes consecutive elements from a vector
-    // println!("{:?}", v);
 
-    
+    v.dedup(); //only removes consecutive elements from a vector
+    println!("dup - {:?}", v);
+
+    let arr1 = Some([
+        "aaa".to_string(),
+        "bbb".to_string(),
+        "ccc".to_string(),
+        "ccc".to_string(),
+        "bbb".to_string(),
+        "".to_string(),
+        "DDD".to_string(),
+    ]);
+
+    // println!()
+    // Way 1: //dependency itertools
+    // let mut arr: Option<Vec<_>> = None;
+    // if let Some(i) = arr1 {
+    //     arr = Some(
+    //         i.iter()
+    //             .map(|x| x.to_lowercase())
+    //             .unique()
+    //             .collect::<Vec<_>>(),
+    //     );
+    // }
+    // println!("{:?}", arr);
+    // let x = [1, 2, 2, 3, 4, 3, 2, 1];
+    // x.iter().dedup(); // [1, 2, 3, 4, 3, 2, 1]
+    // let x1: Vec<_> = x.iter().unique().collect(); // [1, 2, 3, 4]
+    // println!("{:?}", x1);
+
     let row = vec![
         SpreadsheetCell::Int(3),
         SpreadsheetCell::Text(String::from("blue")),
@@ -142,7 +174,7 @@ pub fn vectors() {
     // println!("{:?}", row);
     // for i in row.iter() {
     //     // println!("{:?}",i);
-       
+
     // }
 
     let a_binding;
@@ -160,12 +192,12 @@ pub fn vectors() {
     another_binding = 1;
     // println!("another binding: {}", another_binding);
 
-//parse &str/string to number
-    let v = ["san","2","5"];
-    let res:Vec<_> = v.iter().map(|x| x.parse::<i32>()).collect();
+    //parse &str/string to number
+    let v = ["san", "2", "5"];
+    let res: Vec<_> = v.iter().map(|x| x.parse::<i32>()).collect();
     // println!("{:?}", res);
 
-    let v1 = ["thiya".to_string(),"5".to_string()];
+    let v1 = ["thiya".to_string(), "5".to_string()];
     let fi: Vec<_> = v1.iter().filter_map(|v| v.parse::<i32>().ok()).collect();
-    println!("parse:{:?}", fi)
+    println!("parse:{:?}", fi);
 }

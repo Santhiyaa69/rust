@@ -1,13 +1,15 @@
 // use password_encrypt::{hash_password, verify_password};
 // use serde_json::from_str;
 
+use chrono::Utc;
+
 // mod print;
 // mod variables;
 //  mod data_types;
-mod strings;
+// mod strings;
 // mod tuples;
 // mod array;
-// mod vectors;
+mod vectors;
 // mod conditionals;
 // mod loops;
 // mod functions;
@@ -17,19 +19,22 @@ mod strings;
 // mod enums;
 // mod match_operator;
 // mod options;
-//  mod iter;
+// mod iter;
 // pub mod results;
-// mod date;
-// mod serde_json;
+mod date;
 // mod password_encrypt;
+// mod serde_json;
 // mod string_matches;
-mod thread;
+// mod thread;
 // mod structs_ex;
 // mod traits;
 // mod hashmap;
 // mod hash;
 // mod student_info;
 // use student_info::*;
+// mod rocket_rs;
+// use rocket_rs::demo;
+mod file;
 
 #[allow(dead_code)]
 
@@ -67,7 +72,7 @@ fn main() {
     // println!("Total Marks:{}",stud2.total());
     // println!("Highest Mark in m2:{:?}",stud1.compare(stud2));
 
-    let data = r#"{
+    let _data = r#"{
         "name": "Thiya",
         "address": "5, KTC Nagar,Tuty",
         "contactInfo": {
@@ -83,15 +88,13 @@ fn main() {
     }"#;
     // let dt = serde_json::from_str(&data).unwrap();
 
-    let pwd = "san123";
-
     // print::print();
     // variables::vars();
     // data_types::types();
-    strings::strings();
+    // strings::strings();
     // tuples::tuples();
     // array::arrays();
-    // vectors::vectors();
+    vectors::vectors();
     // conditionals::conditions();
     // loops::loops();
     // functions::run();
@@ -103,7 +106,7 @@ fn main() {
     // iter::run();
     // hashmap::run();
     // hash::run();
-    // date::bsondatetime_demo();
+    date::bsondatetime_demo();
     // date::datetime();
     // date::cal_days_bt_dates();
     // serde_json::run();
@@ -115,4 +118,19 @@ fn main() {
     //     "$scrypt$ln=15,r=8,p=1$d5CP0THDyqmVQBMM8NcdIA$RNGmmsNnTTXJiMgJAKYdzvBb2rxJ+2rLQn2DdNT5BCo",
     //     "12345",
     // );
+    file::run();
+    file::open();
+
+    // #[rocket::main]
+    // async fn main() -> Result<(), rocket::Error> {
+    //     let _rocket = rocket::build()
+    //         .mount("/hello", demo::routes())
+    //         .launch()
+    //         .await?;
+
+    //     Ok(())
+    // }
+
+    let a = Utc::now();
+    println!("output = {:?}", &a);
 }

@@ -1,31 +1,31 @@
 #[derive(Debug)]
 enum Gender {
     Male,
-    Female
- }
+    Female,
+}
 // enum Payment {
 //     Cash,
 //     CreditCard,
 //     DebitCard,
 // }
 #[derive(Debug)]
-enum Payment{
+enum Payment {
     Cash(i32),
-    CreditCard(String,usize),
+    CreditCard(String, usize),
     DebitCard(DebitData),
-    Crypto{account_num: i32, amount:String}
+    Crypto { account_num: i32, amount: String },
 }
 
 #[derive(Debug)]
 #[allow(dead_code)]
 struct Person {
     name: String,
-    gender: Gender
+    gender: Gender,
 }
 #[derive(Debug)]
 struct DebitData {
     card_number: i32,
-    amount: usize
+    amount: usize,
 }
 
 pub fn run() {
@@ -34,7 +34,7 @@ pub fn run() {
     // println!("{:?}",male);
     // println!("{:?}",female);
 
-//struct and enum
+    //struct and enum
     let _p1 = Person {
         name: "sai".to_string(),
         gender: Gender::Female,
@@ -48,18 +48,18 @@ pub fn run() {
     // let v = vec![p1,p2];
     // println!("{:?}", &v);
 
-//match and enum
-//     let payment_method = Payment::Cash;
-//    match payment_method {
-//        Payment::Cash => println!("paying with cash {}",500),
-//        _ => println!("other payment method")
-//    }
+    //match and enum
+    //     let payment_method = Payment::Cash;
+    //    match payment_method {
+    //        Payment::Cash => println!("paying with cash {}",500),
+    //        _ => println!("other payment method")
+    //    }
 
-// match statement and enum with data type
+    // match statement and enum with data type
     let cash = Payment::Cash(500);
     pay_process(cash);
 
-    let credit_card = Payment::CreditCard("thiya".to_string(),8000);
+    let credit_card = Payment::CreditCard("thiya".to_string(), 8000);
     pay_process(credit_card);
 
     let debit_card = Payment::DebitCard(DebitData {
@@ -68,16 +68,24 @@ pub fn run() {
     });
     pay_process(debit_card);
 
-    let cryp = Payment::Crypto {account_num: 78955578 , amount:"TwentyFiveThousand".to_string()};
+    let cryp = Payment::Crypto {
+        account_num: 78955578,
+        amount: "TwentyFiveThousand".to_string(),
+    };
     pay_process(cryp);
 }
 
 fn pay_process(payment_method: Payment) {
     match payment_method {
-        Payment::Cash(amt) => println!("paying with cash {}",&amt),
-        Payment::CreditCard(a, b) => println!("payment from {} amount {}", &a,&b),
-        Payment::DebitCard(data) => println!("paying with cardnum: {} amount: {}",data.card_number,data.amount),
-        Payment::Crypto { account_num, amount } => println!("Account number:{} amount:{}",account_num,amount),
+        Payment::Cash(amt) => println!("paying with cash {}", &amt),
+        Payment::CreditCard(a, b) => println!("payment from {} amount {}", &a, &b),
+        Payment::DebitCard(data) => println!(
+            "paying with cardnum: {} amount: {}",
+            data.card_number, data.amount
+        ),
+        Payment::Crypto {
+            account_num,
+            amount,
+        } => println!("Account number:{} amount:{}", account_num, amount),
     }
 }
- 

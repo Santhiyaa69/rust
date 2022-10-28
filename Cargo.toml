@@ -3,22 +3,16 @@ name = "tryrust"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[dependencies.bson]
-version = "2.2.0"
-features = ["chrono-0_4"]
-
-[dependencies.serde]
-version = "1.0.130"
-features = ["derive"]
-
-[dependencies.serde_json]
-version = "1.0"
-
-[dependencies.chrono]
-version = "0.4.19"
-
-[dependencies.scrypt]
-version = "0.10.0"
-features = ["simple"]
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0.136", features = ["derive"] }
+serde_urlencoded = "0.7.1"
+chrono = "0.4.19"
+# itertools = "0.10.2"
+scrypt = { version = "0.10.0", features = ["simple"] }
+rocket = { version = "0.5.0-rc.2", default-features = false, features = [
+    "json",
+] }
+rocket_okapi = { git = "https://github.com/ThouCheese/okapi", branch = "feat/rocket0.5-rc.2", features = [
+    "rapidoc",
+] }
