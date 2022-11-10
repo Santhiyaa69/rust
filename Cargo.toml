@@ -1,0 +1,26 @@
+[package]
+name = "voucherName"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+env_logger = "0.9.1"
+actix-web = "4.2.1"
+chrono = { version = "0.4.22", features = ["serde"] }
+serde = { version = "1.0.144", features = ["derive"] }
+serde_json = "1.0.85"
+dotenv = "0.15.0"
+mongodb = { version = "2.3.0", features = ["bson-chrono-0_4"] }
+strum = { version = "0.24.1", features = ["derive"] }
+thiserror = "1.0.35"
+futures = "0.3.24"
+lazy_static = "1.4.0"
+
+types = { git = "https://github.com/auditplus/tenant-apis", tag = "v0.1.16", package = "types" }
+
+[dev-dependencies.tokio]
+version = "1.12.0"
+features = ["rt", "macros"]
+
+[dev-dependencies.actix-rt]
+version = "2.7.0"
