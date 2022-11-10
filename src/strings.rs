@@ -112,4 +112,7 @@ pub fn strings() {
 
     a.insert(3, 's');
     println!("{}", a); // Cars
+
+    let add_string = concat!("san","thiya");
+    println!("{:?}", &a);
 }

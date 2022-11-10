@@ -1,5 +1,7 @@
 use std::collections::HashSet;
 
+use mongodb::bson::oid::ObjectId;
+
 // use itertools::Itertools;
 
 #[derive(Debug)]
@@ -24,6 +26,14 @@ enum SpreadsheetCell {
 struct Amount {
     debit: f64, 
     credit: f64,
+}
+
+#[derive(Debug)]
+#[allow(dead_code)]
+
+struct ChequeBook {
+    id: String, 
+    name: String,
 }
 
 pub fn vectors() {
@@ -218,9 +228,25 @@ pub fn vectors() {
         credit: 0.0
     };
     let amt_arr = vec![amt1,amt2];
-    let ex_amount =  amt_arr.iter().fold(0.0, |x,y| x+y.debit - y.credit);
+    let ex_amount =  amt_arr.iter().fold(0.0, |x,y| x+y.debit - y.credit); //Folding is useful whenever you have a collection of something, and want to produce a single value from it.
     println!("ex_amount={:?}", &ex_amount);
 
     let amount = 500.0 - ex_amount;
     println!("amount={:?}", &amount);
+
+
+    let cb1 = ChequeBook {
+        id: "636d00dd1fad5572243ce759".to_string(),
+        name: "TMB ACCOUNT".to_string(),
+    };
+
+    let cb2 = ChequeBook {
+        id: "636d00dd1fad5572243ce75a".to_string(),
+        name: "HDFC ACCOUNT".to_string(),
+    };
+    
+    //Retains only the elements specified by the predicate. - retain()
+    let mut  account_name = vec![cb1,cb2];
+    account_name.retain(|x| x.id != *"636d00dd1fad5572243ce759");
+    println!("account_name = {:?}", &account_name);
 }
