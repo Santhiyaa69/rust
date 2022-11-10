@@ -19,16 +19,16 @@ mod vectors;
 // mod enums;
 // mod match_operator;
 // mod options;
-mod iter;
-mod date;
+// mod iter;
+// mod date;
 // mod password_encrypt;
 // mod serde_json;
-mod string_matches;
+// mod string_matches;
 // mod thread;
 // mod structs_ex;
 // mod traits;
-mod hashmap;
-mod hash;
+// mod hashmap;
+// mod hash;
 // mod student_info;
 // use student_info::*;
 // mod rocket_rs;
@@ -102,14 +102,14 @@ fn main() {
     // enums::run();
     // match_operator::run();
     // options::run();
-    iter::run();
-    hashmap::run();
-    hash::run();
+    // iter::run();
+    // hashmap::run();
+    // hash::run();
     // date::bsondatetime_demo();
     // date::datetime();
-    date::cal_days_bt_dates();
+    // date::cal_days_bt_dates();
     // serde_json::run();
-    string_matches::run();
+    // string_matches::run();
     // thread::run();
     // structs_ex::get_customer(dt).unwrap();
     // hash_password("aplus");
@@ -131,5 +131,5 @@ fn main() {
     // }
 
     let a = Utc::now();
-    println!("output = {:?}", &a);
+    // println!("output = {:?}", &a);
 }

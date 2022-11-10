@@ -18,6 +18,14 @@ enum SpreadsheetCell {
     Text(String),
 }
 
+#[derive(Debug)]
+#[allow(dead_code)]
+
+struct Amount {
+    debit: f64, 
+    credit: f64,
+}
+
 pub fn vectors() {
     // let v:Vec<i32> = Vec::new();
     // println!("vectors length:{:?}",v.len());
@@ -137,7 +145,7 @@ pub fn vectors() {
     v.sort_unstable();
 
     v.dedup(); //only removes consecutive elements from a vector
-    println!("dup - {:?}", v);
+    // println!("dup - {:?}", v);
 
     let arr1 = Some([
         "aaa".to_string(),
@@ -199,5 +207,20 @@ pub fn vectors() {
 
     let v1 = ["thiya".to_string(), "5".to_string()];
     let fi: Vec<_> = v1.iter().filter_map(|v| v.parse::<i32>().ok()).collect();
-    println!("parse:{:?}", fi);
+    // println!("parse:{:?}", fi);
+
+    let amt1 = Amount {
+        debit:40.0,
+        credit: 0.0
+    };
+    let amt2 = Amount {
+        debit:128.0,
+        credit: 0.0
+    };
+    let amt_arr = vec![amt1,amt2];
+    let ex_amount =  amt_arr.iter().fold(0.0, |x,y| x+y.debit - y.credit);
+    println!("ex_amount={:?}", &ex_amount);
+
+    let amount = 500.0 - ex_amount;
+    println!("amount={:?}", &amount);
 }
