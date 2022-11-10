@@ -89,9 +89,9 @@ pub fn run() {
     // println!("{}", index);
 
     //flatten
-    // let nested_vec: Vec<Vec<i32>> = vec![vec![1, 2], vec![3, 4]];
-    // let flat_vec: Vec<i32> = nested_vec.into_iter().flatten().collect();
-    // println!("{:?}", flat_vec);
+    let nested_vec: Vec<Vec<i32>> = vec![vec![1, 2], vec![3, 4]];
+    let flat_vec: Vec<i32> = nested_vec.into_iter().flatten().collect();
+    println!("flatten = {:?}", flat_vec);
 
     // let a1 = String::from("sun");
     // let a2 = String::from("moon");

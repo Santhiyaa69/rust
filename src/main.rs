@@ -9,7 +9,7 @@ use chrono::Utc;
 // mod strings;
 // mod tuples;
 // mod array;
-mod vectors;
+// mod vectors;
 // mod conditionals;
 // mod loops;
 // mod functions;
@@ -19,7 +19,7 @@ mod vectors;
 // mod enums;
 // mod match_operator;
 // mod options;
-// mod iter;
+mod iter;
 // mod date;
 // mod password_encrypt;
 // mod serde_json;
@@ -34,6 +34,7 @@ mod vectors;
 // mod rocket_rs;
 // use rocket_rs::demo;
 // mod file;
+mod max_by;
 
 #[allow(dead_code)]
 
@@ -93,7 +94,7 @@ fn main() {
     // strings::strings();
     // tuples::tuples();
     // array::arrays();
-    vectors::vectors();
+    // vectors::vectors();
     // conditionals::conditions();
     // loops::loops();
     // functions::run();
@@ -102,7 +103,7 @@ fn main() {
     // enums::run();
     // match_operator::run();
     // options::run();
-    // iter::run();
+    iter::run();
     // hashmap::run();
     // hash::run();
     // date::bsondatetime_demo();
@@ -119,6 +120,7 @@ fn main() {
     // );
     // file::run();
     // file::open();
+    max_by::max_by();
 
     // #[rocket::main]
     // async fn main() -> Result<(), rocket::Error> {
