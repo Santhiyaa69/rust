@@ -56,6 +56,8 @@ pub fn run() {
     println!("{:?}", per.get());
     // //  println!("{:#?}",(per.id,per.first_name,per.last_name));
     // println!("{:#?}",Person::get_details(per.id,per.first_name,per.last_name));
+    
+   
 }
 
 // fn filter_by_cost(prod1: Products, prod2: Products) -> Products{
@@ -69,8 +71,9 @@ pub fn run() {
 //     }
 
 impl Person {
-    fn get(&self) {
-        println!("{} {} {}", self.id, self.first_name, self.last_name)
+    fn get(&self) -> String {
+      let out =  format!("{} {} {}", self.id, self.first_name, self.last_name);
+      out
     }
 
     //     fn get(&self) -> String {

@@ -127,7 +127,7 @@ pub fn run() {
     let v = vec![emp1, emp2, emp3];
     let fil: Vec<Employee> = v.clone().into_iter().filter(|x| x.salary > 10000).collect();
     let find = v.iter().find(|x| x.age == 30);
-    let map: Vec<String> = find.clone().iter().map(|x| x.name.to_uppercase()).collect();
+    let map: Vec<String> = find.clone().iter().map(|x| x.name.to_uppercase()).collect(); // convert name to uppercase 
     // println!("emp-arr - {:#?}", &map);
     println!("fil - {:#?}", fil);
     println!("find - {:?}", find);
@@ -153,6 +153,7 @@ pub fn run() {
         println!("index {} item {}", i, x);
     }
 
+    //parse &str into u32
     let v = ["1", "2", "5"];
     let res: Vec<_> = v.iter().map(|x| x.parse::<u32>()).collect();
     println!("res - {:?}", res);
@@ -161,10 +162,20 @@ pub fn run() {
     let res1 = v1.parse::<u32>().map_err(|x| x.to_string());
     println!("res1 - {:?}", res1);
 
+    //filtermap
     let strings = vec!["tofu", "93", "18"];
     let numbers: Vec<_> = strings
         .into_iter()
         .filter_map(|s| s.parse::<i32>().ok())
         .collect();
     println!("Results: {:?}", numbers);
+
+    //find max element 
+    let  a = [-1, 2, 3,5,-100,3,97];
+    println!("max = {:?}", a.iter().max());
+    println!("min = {:?}", a.iter().min());
+    println!("max-by = {:?}", a.iter().max_by(|x,y| x.cmp(y)));
+
+    let a = [1, 2, 3];
+    println!("out={}",a.iter().any(|&x| x > 0));
 }

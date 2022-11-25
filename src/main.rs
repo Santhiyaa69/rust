@@ -9,20 +9,20 @@ use chrono::Utc;
 // mod strings;
 // mod tuples;
 // mod array;
-mod vectors;
+// mod vectors;
 // mod conditionals;
 // mod loops;
 // mod functions;
 // mod pointer_reference;
 // mod structs;
 // mod results;
-// mod enums;
+mod enums;
 // mod match_operator;
 // mod options;
 // mod iter;
 // mod date;
 // mod password_encrypt;
-// mod serde_json;
+mod serde_json;
 // mod string_matches;
 // mod thread;
 // mod structs_ex;
@@ -34,7 +34,8 @@ mod vectors;
 // mod rocket_rs;
 // use rocket_rs::demo;
 // mod file;
-mod max_by;
+// mod max_by;
+mod trait_impl;
 
 #[allow(dead_code)]
 
@@ -94,13 +95,13 @@ fn main() {
     // strings::strings();
     // tuples::tuples();
     // array::arrays();
-    vectors::vectors();
+    // vectors::vectors();
     // conditionals::conditions();
     // loops::loops();
     // functions::run();
     // structs::run();
     // results::run();
-    // enums::run();
+    enums::run();
     // match_operator::run();
     // options::run();
     // iter::run();
@@ -110,6 +111,7 @@ fn main() {
     // date::datetime();
     // date::cal_days_bt_dates();
     // serde_json::run();
+    serde_json::example();
     // string_matches::run();
     // thread::run();
     // structs_ex::get_customer(dt).unwrap();
@@ -120,7 +122,7 @@ fn main() {
     // );
     // file::run();
     // file::open();
-    max_by::max_by();
+    // max_by::max_by();
 
     // #[rocket::main]
     // async fn main() -> Result<(), rocket::Error> {

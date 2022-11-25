@@ -115,4 +115,12 @@ pub fn strings() {
 
     let add_string = concat!("san","thiya");
     println!("{:?}", &a);
+
+    let mut owned_string: String = "hello ".to_owned();
+    let borrowed_string: &str = "world";
+    owned_string.push_str(borrowed_string);
+    println!("result = {}", owned_string); //hello world
+    
+    let result1 = format!("{}{}",owned_string,borrowed_string);
+    println!("result1 = {:?}", result1); //"hello world"
 }

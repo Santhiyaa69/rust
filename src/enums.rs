@@ -1,3 +1,5 @@
+use serde_repr::{Deserialize_repr,Serialize_repr};
+
 #[derive(Debug)]
 enum Gender {
     Male,
@@ -88,4 +90,42 @@ fn pay_process(payment_method: Payment) {
             amount,
         } => println!("Account number:{} amount:{}", account_num, amount),
     }
+}
+
+#[derive(Debug, Clone)]
+pub enum Precision {
+    P0,
+    P1,
+    P2,
+    P3,
+    P4,
+}
+
+impl Precision {
+    fn inner(&self) -> i32 {
+        match self {
+            Self::P0 => 0,
+            Self::P1 => 1,
+            Self::P2 => 2,
+            Self::P3 => 3,
+            Self::P4 => 4,
+        }
+    }
+}
+
+impl Default for Precision {
+    fn default() -> Self {
+        Self::P0
+    }
+}
+
+//serialize enum as a number  //dependency  - serde_repr = "0.1.9"
+
+#[derive(Serialize_repr, Deserialize_repr, PartialEq, Debug)]
+#[repr(u8)]
+enum SmallPrime {
+    Two = 2,
+    Three = 3,
+    Five = 5,
+    Seven = 7,
 }
