@@ -12,11 +12,11 @@ pub fn run() {
     let address = String::from("Address");
     map.insert(address.clone(), String::from("TUTY"));
     let value = map.get(&address);
-    println!("state: {:?}",&value); //Some("TUTY")
+    println!("state: {:?}", &value); //Some("TUTY")
 
     let state = String::from("state");
     let s = map.get(&state);
-    println!("state: {:?}",&s); // None(if there's no value for key get will return none)
+    println!("state: {:?}", &s); // None(if there's no value for key get will return none)
 
     //contains_key - checks if key exists in hashmap
     // if map.contains_key(&address) {
@@ -108,7 +108,7 @@ pub fn run() {
         }
         None => println!("No match found"),
     }
-    // println!("{:?}", contacts); // {"sri": ["6754231092"], "sakthi": ["6754231009"], "sai": ["8790654532"]}
+    // println!("contacts = {:?}", contacts); // {"sri": ["6754231092"], "sakthi": ["6754231009"], "sai": ["8790654532"]}
 
     // Try to find an entry in HashMap<&str, Vec<&str>>
     // If it does - it will push the &str (employee_name) into Vec<&str>.
@@ -139,9 +139,7 @@ pub fn run() {
     // println!("{:?}", classes);  //{"class A": [Some("Joy")]}
 
     let mut classes: HashMap<String, String> = HashMap::new();
-    let s1 = classes
-        .entry(String::from("class A"))
-        .or_insert(String::from("Joy"));
+    let s1 = classes.entry(String::from("class A")).or_insert(String::from("Joy"));
     // println!("class:{:?}", classes); //{"class A": [Some("Joy")]}
 
     let mut classes: HashMap<String, HashSet<String>> = HashMap::new();

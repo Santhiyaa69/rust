@@ -1,5 +1,9 @@
 use mongodb::bson::oid::ObjectId;
 
+//float - total_cmp
+//integer - cmp
+//string - cmp
+
 #[derive(Debug)]
 pub struct VoucherAccountTransaction {
     pub pending: Option<ObjectId>,
@@ -14,7 +18,7 @@ struct GoodBoy {
     weight: i32,
 }
 
-pub fn max_by () {
+pub fn sort_by () {
     let ac_trns1 = VoucherAccountTransaction {
         account_type: "BANK_ACCOUNT".to_owned(),
         credit: 0.0,
@@ -42,9 +46,11 @@ pub fn max_by () {
 bois.sort_by(|a, b| b.weight.cmp(&a.weight));
 println!("out2 = {:?}",&bois.first());
 
-let mut credit = [200,100];
-credit.sort_by(|a, b| b.cmp(a));
-println!("{:?}", &credit.first());
+let mut credit = [300,1000,500,200,100];
+credit.sort_by(|a, b| a.cmp(b)); 
+println!("sort-asc = {:?}", &credit);//[100, 200, 300, 500, 1000]
+credit.sort_by(|a, b| b.cmp(a)); 
+println!("sort-desc = {:?}", &credit.first());
 
 let data: &mut [_] = &mut [2, 10, 5, 8];
 

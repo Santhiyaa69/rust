@@ -172,9 +172,9 @@ pub fn run() {
 
     //find max element 
     let  a = [-1, 2, 3,5,-100,3,97];
-    println!("max = {:?}", a.iter().max());
-    println!("min = {:?}", a.iter().min());
-    println!("max-by = {:?}", a.iter().max_by(|x,y| x.cmp(y)));
+    println!("max = {:?}", a.iter().max()); //97
+    println!("min = {:?}", a.iter().min()); //-100
+    println!("max-by = {:?}", a.iter().max_by(|x,y| x.cmp(y))); //97
 
     let a = [1, 2, 3];
     println!("out={}",a.iter().any(|&x| x > 0));

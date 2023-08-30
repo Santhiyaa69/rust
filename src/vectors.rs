@@ -152,7 +152,7 @@ pub fn vectors() {
         Some("c".to_string()),
         Some("b".to_string()),
     ];
-    v.sort_unstable();
+    v.sort_unstable(); //[a,a,b,b,c]
 
     v.dedup(); //only removes consecutive elements from a vector
     // println!("dup - {:?}", v);

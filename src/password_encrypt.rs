@@ -12,8 +12,6 @@ pub fn hash_password(password: &str) {
 
 pub fn verify_password(hash: &str, password: &str) {
     let parsed_hash = PasswordHash::new(hash).unwrap();
-    let verified = Scrypt
-        .verify_password(password.as_bytes(), &parsed_hash)
-        .is_ok();
+    let verified = Scrypt.verify_password(password.as_bytes(), &parsed_hash).is_ok();
     println!("{}", verified);
 }

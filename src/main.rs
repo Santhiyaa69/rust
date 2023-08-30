@@ -1,7 +1,7 @@
 // use password_encrypt::{hash_password, verify_password};
 // use serde_json::from_str;
 
-use chrono::Utc;
+// use chrono::Utc;
 
 // mod print;
 // mod variables;
@@ -16,13 +16,15 @@ use chrono::Utc;
 // mod pointer_reference;
 // mod structs;
 // mod results;
-mod enums;
+// mod enums;
 // mod match_operator;
 // mod options;
 // mod iter;
 // mod date;
-// mod password_encrypt;
-mod serde_json;
+
+mod mutex;
+mod password_encrypt;
+// mod serde_json;
 // mod string_matches;
 // mod thread;
 // mod structs_ex;
@@ -34,8 +36,10 @@ mod serde_json;
 // mod rocket_rs;
 // use rocket_rs::demo;
 // mod file;
-// mod max_by;
-mod trait_impl;
+// mod sort_by;
+// mod type_of;
+// mod trait_impl;
+// mod group_by;
 
 #[allow(dead_code)]
 
@@ -101,7 +105,7 @@ fn main() {
     // functions::run();
     // structs::run();
     // results::run();
-    enums::run();
+    // enums::run();
     // match_operator::run();
     // options::run();
     // iter::run();
@@ -111,18 +115,21 @@ fn main() {
     // date::datetime();
     // date::cal_days_bt_dates();
     // serde_json::run();
-    serde_json::example();
+    // serde_json::example();
     // string_matches::run();
     // thread::run();
     // structs_ex::get_customer(dt).unwrap();
     // hash_password("aplus");
     // verify_password(
-    //     "$scrypt$ln=15,r=8,p=1$d5CP0THDyqmVQBMM8NcdIA$RNGmmsNnTTXJiMgJAKYdzvBb2rxJ+2rLQn2DdNT5BCo",
-    //     "12345",
+    //     "$scrypt$ln=15,r=8,p=1$KMLYHMsypV8xsq54MRUK3Q$PzhikGR7NVTEfUMwFibhRHPJxit0VLLOyzVZRAIJAhw",
+    //     "aplus",
     // );
     // file::run();
     // file::open();
-    // max_by::max_by();
+    // sort_by::sort_by();
+    // type_of::run();
+    // group_by::run();
+    mutex::mutex();
 
     // #[rocket::main]
     // async fn main() -> Result<(), rocket::Error> {
@@ -134,6 +141,6 @@ fn main() {
     //     Ok(())
     // }
 
-    let a = Utc::now();
+    // let a = Utc::now();
     // println!("output = {:?}", &a);
 }
